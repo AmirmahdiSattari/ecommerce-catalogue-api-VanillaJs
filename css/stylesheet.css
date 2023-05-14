@@ -1,0 +1,209 @@
+ @import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+
+ * {
+     padding: 0;
+     margin: 0;
+     box-sizing: border-box;
+     list-style: none;
+     text-decoration: none;
+ }
+
+ html {
+     font-size: 62.5%;
+     font-family: 'Lilita One', cursive;
+     scroll-behavior: smooth;
+ }
+
+ body {
+     font-size: 1.6rem;
+ }
+
+ .container {
+     max-width: 144rem;
+     padding: .5rem 2rem;
+     margin: 0 auto;
+     transition: all .4s ease;
+ }
+ .container-hidden{
+    transition: all .4s ease;
+    opacity: 0;
+    visibility: 0;
+ }
+
+ .products {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+     gap: 1rem;
+ }
+
+ .product {
+     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+     border-radius: 1rem;
+     background-color: white;
+     padding-bottom: 2rem;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+     transition: all .4s ease;
+ }
+
+
+ .product img {
+
+     width: 99%;
+     align-self: center;
+     object-fit: cover;
+     border-top-left-radius: 1rem;
+     border-top-right-radius: 1rem;
+ }
+
+ .product-content {
+     padding: 1rem 2rem;
+ }
+
+ .product .product-title {
+     font-size: 2rem;
+
+ }
+
+ .product-description {
+     text-align: justify;
+ }
+
+ .product-title,
+ .product-price-container,
+ .product-description,
+ .product-category {
+     padding: .5rem 0;
+ }
+
+ .product-price-container {
+     padding-top: 2rem;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+ }
+
+ .add-to-cart {
+     align-items: center;
+     appearance: none;
+     background-color: #FCFCFD;
+     border-radius: 4px;
+     border-width: 0;
+     box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+     box-sizing: border-box;
+     color: #36395A;
+     cursor: pointer;
+     display: inline-flex;
+     font-family: "JetBrains Mono", monospace;
+     height: 48px;
+     justify-content: center;
+     line-height: 1;
+     list-style: none;
+     overflow: hidden;
+     padding-left: 16px;
+     padding-right: 16px;
+     position: relative;
+     text-align: left;
+     text-decoration: none;
+     transition: box-shadow .15s, transform .15s;
+     user-select: none;
+     -webkit-user-select: none;
+     touch-action: manipulation;
+     white-space: nowrap;
+     will-change: box-shadow, transform;
+     font-size: 18px;
+ }
+
+ .add-to-cart:focus {
+     box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+ }
+
+ .add-to-cart:hover {
+     box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+     transform: translateY(-2px);
+ }
+
+ .add-to-cart:active {
+     box-shadow: #D6D6E7 0 3px 7px inset;
+     transform: translateY(2px);
+ }
+
+ /* loader */
+ .loader {
+     width: 48px;
+     height: 48px;
+     background: #FF3D00;
+     display: block;
+     margin: 20px auto;
+     position: relative;
+     box-sizing: border-box;
+     animation: rotationBack 1s ease-in-out infinite reverse;
+     transition: all .5s ease;
+ }
+
+ .loader-hidden{
+    transition: all .5s ease;
+    opacity: 0;
+    visibility: hidden;
+ }
+
+ .loader::before {
+     content: '';
+     box-sizing: border-box;
+     left: 0;
+     top: 0;
+     transform: rotate(45deg);
+     position: absolute;
+     width: 48px;
+     height: 48px;
+     background: #FF3D00;
+     box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+ }
+
+ .loader::after {
+     content: '';
+     box-sizing: border-box;
+     width: 32px;
+     height: 32px;
+     border-radius: 50%;
+     position: absolute;
+     left: 50%;
+     top: 50%;
+     background: #FFF;
+     transform: translate(-50%, -50%);
+     box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+ }
+
+ @keyframes rotationBack {
+     0% {
+         transform: rotate(0deg);
+     }
+
+     100% {
+         transform: rotate(-360deg);
+     }
+ }
+ /* end of loader */
+
+ /* scroll progress bar */
+ header{
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color:#000;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+}
+header .progress{
+    width: 100%;
+    height: 10px;
+    background-color: #fefefe;
+}
+header .progress .progress-bar{
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(to right ,#ff0077,#b600c6c5);
+}
+/* end of scroll progress bar */
